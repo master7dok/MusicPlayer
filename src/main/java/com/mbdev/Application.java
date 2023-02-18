@@ -7,10 +7,11 @@ public class Application {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "application-context.xml"
         );
-        Music music = context.getBean("typeMusic", Music.class);
+//        Dependency Injection
+//        Music music = context.getBean("typeMusic", Music.class);
+//        MusicPlayer musicPlayer = new MusicPlayer(music);
 
-        MusicPlayer musicPlayer = new MusicPlayer(music);
-
+        MusicPlayer musicPlayer = context.getBean("MusicPlayer", MusicPlayer.class);
         musicPlayer.playMusic();
 
         context.close();

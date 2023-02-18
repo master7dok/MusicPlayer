@@ -4,7 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="typeMusic"
-          class="com.mbdev.RapMusic">
+          class="com.mbdev.ClassicMusic">
     </bean>
-
+    <bean id="MusicPlayer" class="com.mbdev.MusicPlayer">
+        <constructor-arg ref="typeMusic"/>
+    </bean>
 </beans>
