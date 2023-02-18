@@ -13,7 +13,7 @@ public class Application {
 
         MusicPlayer musicPlayer = context.getBean("MusicPlayer", MusicPlayer.class);
         musicPlayer.playMusic();
-
+        System.out.println(musicPlayer.getName() + " " + musicPlayer.getVolume());
         context.close();
     }
 }

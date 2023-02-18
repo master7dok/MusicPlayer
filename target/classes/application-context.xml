@@ -7,6 +7,8 @@
           class="com.mbdev.ClassicMusic">
     </bean>
     <bean id="MusicPlayer" class="com.mbdev.MusicPlayer">
-        <constructor-arg ref="typeMusic"/>
+        <property name="music" ref="typeMusic"/>
+        <property name="name" value="Some name"></property>
+        <property name="volume" value="50"></property>
     </bean>
 </beans>
