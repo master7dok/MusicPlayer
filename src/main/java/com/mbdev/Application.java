@@ -5,15 +5,20 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Application {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "application-context.xml"
-        );
-//        Dependency Injection
-//        Music music = context.getBean("typeMusic", Music.class);
-//        MusicPlayer musicPlayer = new MusicPlayer(music);
+                "application-context.xml");
+        MusicPlayer firstMusicPlayer = context.getBean("MusicPlayer", MusicPlayer.class);
+        MusicPlayer secondMusicPlayer = context.getBean("MusicPlayer", MusicPlayer.class);
 
-        MusicPlayer musicPlayer = context.getBean("MusicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic();
-        System.out.println(musicPlayer.getName() + " " + musicPlayer.getVolume());
+        boolean comparison = firstMusicPlayer == secondMusicPlayer;
+        System.out.println(comparison);
+        System.out.println(firstMusicPlayer);
+        System.out.println(secondMusicPlayer);
+
+        firstMusicPlayer.setVolume("10");
+        System.out.println(firstMusicPlayer.getVolume());
+        System.out.println(secondMusicPlayer.getVolume());
+
+        System.out.println(firstMusicPlayer.getName() + " " + firstMusicPlayer.getVolume());
         context.close();
     }
 }

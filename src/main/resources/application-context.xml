@@ -19,7 +19,7 @@
           class="com.mbdev.RockMusic">
     </bean>
 
-    <bean id="MusicPlayer" class="com.mbdev.MusicPlayer">
+    <bean id="MusicPlayer" class="com.mbdev.MusicPlayer" scope="prototype">
         <property name="musicList">
             <list>
                 <ref bean="typeMusic1"></ref>
