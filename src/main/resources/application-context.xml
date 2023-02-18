@@ -9,11 +9,24 @@
        http://www.springframework.org/schema/context">
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
-    <bean id="typeMusic"
+    <bean id="typeMusic1"
           class="com.mbdev.ClassicMusic">
     </bean>
+    <bean id="typeMusic2"
+          class="com.mbdev.RapMusic">
+    </bean>
+    <bean id="typeMusic3"
+          class="com.mbdev.RockMusic">
+    </bean>
+
     <bean id="MusicPlayer" class="com.mbdev.MusicPlayer">
-        <property name="music" ref="typeMusic"/>
+        <property name="musicList">
+            <list>
+                <ref bean="typeMusic1"></ref>
+                <ref bean="typeMusic2"></ref>
+                <ref bean="typeMusic3"></ref>
+            </list>
+        </property>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
