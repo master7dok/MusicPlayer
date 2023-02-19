@@ -8,10 +8,5 @@
        http://www.springframework.org/schema/spring-context.xsd
        http://www.springframework.org/schema/context">
 
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
-    <bean id="typeMusic1"
-          class="com.mbdev.ClassicMusic"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy">
-    </bean>
+    <context:component-scan base-package="com.mbdev" ></context:component-scan>
 </beans>
