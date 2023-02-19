@@ -1,18 +1,15 @@
 package com.mbdev;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MusicPlayer {
+    private ClassicMusic classicMusic;
 
-   public Music music;
-
-    public MusicPlayer(Music music) {
-    this.music = music;
+    public MusicPlayer(ClassicMusic classicMusic){
+        this.classicMusic = classicMusic;
     }
-
     public void playMusic(){
-            System.out.println("Playing: " + music.getSong());
-        }
+        System.out.println("Playing: " + classicMusic.getSong());
     }
-
+}

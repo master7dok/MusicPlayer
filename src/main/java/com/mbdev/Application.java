@@ -7,15 +7,18 @@ public class Application {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "application-context.xml");
 
-        Music music = context.getBean("classicMusic", Music.class);
-        Music music2 = context.getBean("rockMusic", Music.class);
-        Music music3 = context.getBean("rapMusic", Music.class);
-        MusicPlayer musicPlayer = new MusicPlayer(music);
-        MusicPlayer musicPlayer2 = new MusicPlayer(music2);
-        MusicPlayer musicPlayer3 = new MusicPlayer(music3);
+//        Music music = context.getBean("classicMusic", Music.class);
+//        Music music2 = context.getBean("rockMusic", Music.class);
+////        Music music3 = context.getBean("rapMusic", Music.class);
+//        MusicPlayer musicPlayer = new MusicPlayer(music);
+//        MusicPlayer musicPlayer2 = new MusicPlayer(music2);
+////        MusicPlayer musicPlayer3 = new MusicPlayer(music3);
+//        musicPlayer.playMusic();
+//        musicPlayer2.playMusic();
+////        musicPlayer3.playMusic();
+
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         musicPlayer.playMusic();
-        musicPlayer2.playMusic();
-        musicPlayer3.playMusic();
         context.close();
     }
 }
